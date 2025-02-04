@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tenaw Temesgen - Portfolio</title>
+    <meta name="description" content="Portfolio of Tenaw Temesgen - Developer & Designer">
+    <meta property="og:title" content="Tenaw Temesgen - Portfolio">
+    <meta property="og:description" content="Passionate developer and graphic designer creating beautiful digital experiences">
+    <meta property="og:image" content="assets/og-image.jpg">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Loading Screen -->
+    <div class="loading-screen">
+        <div class="loading-spinner"></div>
+    </div>
+
+    <!-- Theme Toggle -->
+    <button id="theme-toggle" class="theme-btn">
+        <i class="fas fa-moon"></i>
+        <i class="fas fa-sun"></i>
+    </button>
+
+    <!-- Back to Top -->
+    <button id="back-to-top" class="cta-button">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- Navigation -->
+    <nav class="glass-nav">
+        <div class="nav-container">
+            <div class="logo" aria-label="Website logo">
+                <img src="assets/logo2.png" alt="Tenaw Temesgen Logo">
+            </div>
+            <ul class="links">
+                <li><a href="#home" aria-current="page">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#portfolio">Portfolio</a></li>
+            </ul>
+            <button class="cta-button" onclick="scrollToContact()">Contact Me</button>
+            <svg class="hamburg" xmlns="http://www.w3.org/2000/svg" height="32" width="34" viewBox="0 0 448 512">
+                <path d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32-14.3 32 32z"/>
+            </svg>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="content">
+            <div class="main-content">
+                <h1 data-aos="fade-right" data-aos-duration="1500">Hi! I'm tenaw</h1>
+                <p class="tagline" data-aos="fade-left" data-aos-duration="1500" data-aos-delay="200">
+                    Turning Ideas Into<br>Digital Reality
+                </p>
+                <div class="buttons">
+                    <button class="cta-button" onclick="scrollToContact()">Hire Me</button>
+                    <button class="cta-button" onclick="window.location.href='#portfolio'">View Work</button>
+                </div>
+                <div class="hero-social">
+                    <a href="https://github.com/tenaw7" target="_blank"><i class="fab fa-github"></i></a>
+                    <a href="https://linkedin.com/in/tenaw7" target="_blank"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://dribbble.com/tenaw7" target="_blank"><i class="fab fa-dribbble"></i></a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <img src="assets/main.png" alt="Tenaw Temesgen" data-aos="zoom-out">
+                <div class="decor-shape"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+        <div class="about-content">
+            <img src="assets/about-me.png" alt="About Me" class="about-image">
+            <div class="about-text">
+                <h3>Turning Vision into Digital Reality & Creative Problem Solver</h3>
+                <p>As an Electrical & Computer Engineering graduate specializing in computer stream, I bridge the gap between technical precision and creative design. With 1+ years of experience crafting full-stack solutions and user-centric interfaces, I transform complex problems into elegant digital experiences that marry functionality with aesthetic appeal.
+                    <h5>Design Philosophy</h5><br>
+                    "Good design is obvious. Great design is transparent."</p>
+                <div class="skills">
+                    <span>Web Development</span>
+                    <span>Graphic Design</span>
+                    <span>Mobile Apps</span>
+                    <span>Branding</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services">
+        <h2>What I Offer</h2>
+        <ul>
+            <li data-aos="zoom-in">
+                <i class="fas fa-laptop-code"></i>
+                <h3>Web Development</h3>
+                <p>Modern, responsive websites built with latest technologies</p>
+            </li>
+            <li data-aos="zoom-in" data-aos-delay="200">
+                <i class="fas fa-paint-brush"></i>
+                <h3>Graphic Design</h3>
+                <p>User-centered interfaces that drive engagement</p>
+            </li>
+            <li data-aos="zoom-in" data-aos-delay="400">
+                <i class="fas fa-mobile-alt"></i>
+                <h3>Mobile Development</h3>
+                <p>Cross-platform mobile applications</p>
+            </li>
+        </ul>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section id="portfolio">
+        <div class="portfolio-header">
+            <h2>My Work</h2>
+            <div class="portfolio-filters">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="web">Web</button>
+                <button class="filter-btn" data-filter="mobile">Mobile</button>
+                <button class="filter-btn" data-filter="design">Design</button>
+            </div>
+        </div>
+        <div class="projects">
+            <div class="project" data-aos="fade-up" data-category="web">
+                <img src="assets/project1.png" alt="Project 1">
+                <div class="project-info">
+                    <h3>E-Commerce Platform</h3>
+                    <p>Full-stack shopping solution with React & Node.js</p>
+                </div>
+            </div>
+            <div class="project" data-aos="fade-up" data-aos-delay="200" data-category="mobile">
+                <img src="assets/project2.png" alt="Project 2">
+                <div class="project-info">
+                    <h3>Fitness App</h3>
+                    <p>Mobile fitness tracking application</p>
+                </div>
+            </div>
+            <div class="project" data-aos="fade-up" data-aos-delay="200" data-category="design">
+                <img src="assets/project3.png" alt="Project 3">
+                <div class="project-info">
+                    <h3>Graphic</h3>
+                    <p>This is my firest Graphic design</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <h2>Let's Connect</h2>
+        <form action="https://formspree.io/f/mzzdggkd?next=/success.html" method="POST">
+            <div class="form-group">
+                <input type="text" name="name" id="name" placeholder="Your Name" required>
+            </div>
+            <div class="form-group">
+                <input type="email" name="_replyto" id="email" placeholder="Your Email" required>
+            </div>
+            <div class="form-group">
+                <textarea name="message" id="message" placeholder="Your Message" required></textarea>
+            </div>
+            <input type="hidden" name="_subject" value="New Portfolio Message">
+<input type="hidden" name="_language" value="en">
+            <button type="submit" class="cta-button">Send Message</button>
+        </form>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2025 Tenaw Temesgen. All Rights Reserved.</p>
+        <div class="social-media">
+            <a href="https://twitter.com/tenaw_t_" target="_blank"><i class="fab fa-twitter"></i></a>
+            <a href="https://linkedin.com/in/tenaw7" target="_blank"><i class="fab fa-linkedin"></i></a>
+            <a href="https://github.com/tenaw7" target="_blank"><i class="fab fa-github"></i></a>
+        </div>
+    </footer>
+
+    <!-- Cursor Elements -->
+    <div class="cursor-dot"></div>
+    <div class="cursor-outline"></div>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
