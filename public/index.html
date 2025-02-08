@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tenaw Temesgen - Developer & Designer Portfolio</title>
+    <title>Tenaw Temesgen - Portfolio</title>
     <meta name="description" content="Portfolio of Tenaw Temesgen - Developer & Designer">
     <meta property="og:title" content="Tenaw Temesgen - Portfolio">
     <meta property="og:description" content="Passionate developer and graphic designer creating beautiful digital experiences">
@@ -15,7 +15,7 @@
 </head>
 <body>
     <!-- Loading Screen -->
-    <div class="loading-screen" aria-hidden="true">
+    <div class="loading-screen">
         <div class="loading-spinner"></div>
     </div>
 
@@ -31,11 +31,11 @@
     </button>
 
     <!-- Navigation -->
-    <nav class="glass-nav" aria-label="Main navigation">
-        <div class="nav-container container">
-            <a href="#home" class="logo">
-                <img src="assets/logo2.png" alt="Tenaw Temesgen Logo" width="120" height="40" loading="lazy">
-            </a>
+    <nav class="glass-nav">
+        <div class="nav-container">
+            <div class="logo" aria-label="Website logo">
+                <img src="assets/logo2.png" alt="Tenaw Temesgen Logo">
+            </div>
             <ul class="links">
                 <li><a href="#home" aria-current="page">Home</a></li>
                 <li><a href="#about">About</a></li>
@@ -152,49 +152,38 @@
     </section>
 
     <!-- Contact Section -->
-        <section id="contact" class="section">
-            <div class="container">
-                <h2 data-aos="fade-up">Let's Work Together</h2>
-                <form class="contact-form" action="https://formspree.io/f/myyvwlww" method="POST" data-aos="fade-up">
-                    <div class="form-group">
-                        <label for="name">Full Name</label>
-                        <input type="text" id="name" name="name" required placeholder="Enter your name">
-                    </div>
-                    <div class="form-group">
-                        <label for="email">Email Address</label>
-                        <input type="email" id="email" name="email" required placeholder="your@email.com">
-                    </div>
-                    <div class="form-group">
-                        <label for="message">Project Details</label>
-                        <textarea id="message" name="message" required placeholder="Describe your project"></textarea>
-                    </div>
-                    <button type="submit" class="cta-button">Send Message</button>
-                </form>
+    <section id="contact">
+        <h2>Let's Connect</h2>
+        <form action="https://formspree.io/f/mzzdggkd?next=/success.html" method="POST">
+            <div class="form-group">
+                <input type="text" name="name" id="name" placeholder="Your Name" required>
             </div>
-        </section>
-    </main>
+            <div class="form-group">
+                <input type="email" name="_replyto" id="email" placeholder="Your Email" required>
+            </div>
+            <div class="form-group">
+                <textarea name="message" id="message" placeholder="Your Message" required></textarea>
+            </div>
+            <input type="hidden" name="_subject" value="New Portfolio Message">
+<input type="hidden" name="_language" value="en">
+            <button type="submit" class="cta-button">Send Message</button>
+        </form>
+    </section>
 
     <!-- Footer -->
-    <footer class="section">
-        <div class="container">
-            <p class="copyright">&copy; <span id="current-year"></span> Tenaw Temesgen. All rights reserved.</p>
-            <div class="social-media">
-                <a href="https://twitter.com/tenaw_t_" target="_blank" rel="noopener noreferrer">
-                    <i class="fab fa-twitter" aria-hidden="true"></i>
-                    <span class="sr-only">Twitter Profile</span>
-                </a>
-                <a href="https://linkedin.com/in/tenaw7" target="_blank" rel="noopener noreferrer">
-                    <i class="fab fa-linkedin" aria-hidden="true"></i>
-                    <span class="sr-only">LinkedIn Profile</span>
-                </a>
-                <a href="https://github.com/tenaw7" target="_blank" rel="noopener noreferrer">
-                    <i class="fab fa-github" aria-hidden="true"></i>
-                    <span class="sr-only">GitHub Profile</span>
-                </a>
-            </div>
+    <footer>
+        <p>© 2025 Tenaw Temesgen. All Rights Reserved.</p>
+        <div class="social-media">
+            <a href="https://twitter.com/tenaw_t_" target="_blank"><i class="fab fa-twitter"></i></a>
+            <a href="https://linkedin.com/in/tenaw7" target="_blank"><i class="fab fa-linkedin"></i></a>
+            <a href="https://github.com/tenaw7" target="_blank"><i class="fab fa-github"></i></a>
         </div>
     </footer>
-    
+
+    <!-- Cursor Elements -->
+    <div class="cursor-dot"></div>
+    <div class="cursor-outline"></div>
+
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script src="script.js"></script>
 </body>
