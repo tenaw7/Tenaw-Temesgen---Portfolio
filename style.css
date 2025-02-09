@@ -158,8 +158,30 @@ body {
     width: 100%;
 }
 
-/* Mobile Menu */
+/* Mobile Menu Styles */
+.hamburg {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0.5rem;
+    color: var(--text-color);
+    font-size: 1.5rem;
+}
+
+.desktop-only {
+    display: block;
+}
+
 @media (max-width: 768px) {
+    .hamburg {
+        display: block;
+    }
+    
+    .desktop-only {
+        display: none;
+    }
+    
     .links {
         display: none;
         position: fixed;
@@ -170,8 +192,29 @@ body {
         padding: 2rem;
         border-radius: 20px;
         box-shadow: var(--shadow-md);
+        z-index: 1000;
+        min-width: 200px;
     }
-
+    
+    .links.active {
+        display: flex;
+    }
+    
+    .links li {
+        margin: 0.5rem 0;
+    }
+    
+    .links a {
+        color: var(--text-color);
+        padding: 0.5rem 0;
+        display: block;
+        width: 100%;
+    }
+    
+    .mobile-contact {
+        display: block;
+    }
+    
     .hero {
         padding: 6rem 2rem;
     }

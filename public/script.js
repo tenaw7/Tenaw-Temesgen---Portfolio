@@ -63,28 +63,40 @@ themeToggle.addEventListener('click', () => {
 // Initialize theme on load
 initTheme();
 
-// Enhanced Mobile Menu
-const hamburg = document.querySelector('.hamburg');
+// Mobile Menu Handling
+const hamburger = document.querySelector('.hamburg');
 const navLinks = document.querySelector('.links');
 const mobileBreakpoint = 768;
 
-function handleMobileMenu() {
+function toggleMobileMenu(event) {
+    if (event) {
+        event.stopPropagation();
+    }
+    navLinks.classList.toggle('active');
+}
+
+function closeMobileMenu() {
     if (window.innerWidth <= mobileBreakpoint) {
         navLinks.classList.remove('active');
     }
 }
 
-hamburg.addEventListener('click', (e) => {
-    e.stopPropagation();
-    navLinks.classList.toggle('active');
-});
+// Event Listeners for Mobile Menu
+hamburger.addEventListener('click', toggleMobileMenu);
 
+// Close menu when clicking outside
 document.addEventListener('click', (e) => {
-    if (!navLinks.contains(e.target) && !hamburg.contains(e.target)) {
-        handleMobileMenu();
+    if (!navLinks.contains(e.target) && !hamburger.contains(e.target)) {
+        closeMobileMenu();
     }
 });
 
+// Close menu when clicking a link
+navLinks.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', closeMobileMenu);
+});
+
+// Handle resize
 window.addEventListener('resize', () => {
     if (window.innerWidth > mobileBreakpoint) {
         navLinks.classList.remove('active');
