@@ -68,7 +68,12 @@
                 </div>
             </div>
             <div class="hero-image">
-                <img src="assets/main.png" alt="Tenaw Temesgen" data-aos="zoom-out">
+                <img src="assets/main.png" 
+                     alt="Tenaw Temesgen"
+                     width="500"
+                     height="500"
+                     loading="lazy"
+                     data-aos="zoom-out">
                 <div class="decor-shape"></div>
             </div>
         </div>
@@ -128,21 +133,33 @@
         </div>
         <div class="projects">
             <div class="project" data-aos="fade-up" data-category="web">
-                <img src="assets/project1.png" alt="Project 1">
+                <img src="assets/project1.png" 
+                     alt="E-Commerce Platform"
+                     width="400"
+                     height="300"
+                     loading="lazy">
                 <div class="project-info">
                     <h3>E-Commerce Platform</h3>
                     <p>Full-stack shopping solution with React & Node.js</p>
                 </div>
             </div>
-            <div class="project" data-aos="fade-up" data-aos-delay="200" data-category="mobile">
-                <img src="assets/project2.png" alt="Project 2">
+            <div class="project" data-aos="fade-up" data-category="mobile">
+                <img src="assets/project2.png" 
+                     alt="Fitness App"
+                     width="400"
+                     height="300"
+                     loading="lazy">
                 <div class="project-info">
                     <h3>Fitness App</h3>
                     <p>Mobile fitness tracking application</p>
                 </div>
             </div>
-            <div class="project" data-aos="fade-up" data-aos-delay="200" data-category="design">
-                <img src="assets/project3.png" alt="Project 3">
+            <div class="project" data-aos="fade-up" data-category="design">
+                <img src="assets/project3.png" 
+                     alt="Graphic Design"
+                     width="400"
+                     height="300"
+                     loading="lazy">
                 <div class="project-info">
                     <h3>Graphic</h3>
                     <p>This is my firest Graphic design</p>
@@ -152,31 +169,59 @@
     </section>
 
     <!-- Contact Section -->
-        <section id="contact" class="section">
-            <div class="container">
-                <h2 data-aos="fade-up">Let's Work Together</h2>
-                <form class="contact-form" action="https://formspree.io/f/myyvwlww" method="POST" data-aos="fade-up">
-                    <div class="form-group">
-                        <label for="name">Full Name</label>
-                        <input type="text" id="name" name="name" required placeholder="Enter your name">
-                    </div>
-                    <div class="form-group">
-                        <label for="email">Email Address</label>
-                        <input type="email" id="email" name="email" required placeholder="your@email.com">
-                    </div>
-                    <div class="form-group">
-                        <label for="message">Project Details</label>
-                        <textarea id="message" name="message" required placeholder="Describe your project"></textarea>
-                    </div>
-                    <button type="submit" class="cta-button">Send Message</button>
-                </form>
+    <section id="contact" class="section">
+        <div class="container">
+            <h2 data-aos="fade-up">Let's Work Together</h2>
+            <div class="contact-info" data-aos="fade-up">
+                <p>
+                    <i class="fas fa-phone"></i>
+                    <a href="tel:+251911507958">+251 911 507 958</a>
+                </p>
             </div>
-        </section>
+            <form class="contact-form" 
+                  action="https://formspree.io/f/xleqgkrw" 
+                  method="POST" 
+                  data-aos="fade-up"
+                  onsubmit="setTimeout(function(){window.location='success.html'}, 1000)">
+                <div class="form-group">
+                    <label for="name">Full Name</label>
+                    <input type="text" 
+                           id="name" 
+                           name="name" 
+                           required 
+                           placeholder="Enter your name">
+                </div>
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" 
+                           id="email" 
+                           name="_replyto" 
+                           required 
+                           placeholder="your@email.com">
+                </div>
+                <div class="form-group">
+                    <label for="message">Project Details</label>
+                    <textarea id="message" 
+                              name="message" 
+                              required 
+                              placeholder="Describe your project"></textarea>
+                </div>
+                <input type="hidden" name="_subject" value="New Portfolio Contact Request">
+                <button type="submit" class="cta-button">Send Message</button>
+            </form>
+        </div>
+    </section>
     </main>
 
     <!-- Footer -->
     <footer class="section">
         <div class="container">
+            <div class="footer-contact">
+                <a href="tel:+251911507958">
+                    <i class="fas fa-phone"></i>
+                    <span>+251 911 507 958</span>
+                </a>
+            </div>
             <p class="copyright">&copy; <span id="current-year"></span> Tenaw Temesgen. All rights reserved.</p>
             <div class="social-media">
                 <a href="https://twitter.com/tenaw_t_" target="_blank" rel="noopener noreferrer">

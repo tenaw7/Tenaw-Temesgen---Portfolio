@@ -1,41 +1,92 @@
-// Initialize AOS
-AOS.init({
-    once: true,
-    duration: 1000,
-    offset: 100
+// Combine document event listeners
+document.addEventListener('DOMContentLoaded', () => {
+    // Initialize theme
+    initTheme();
+    
+    // Initialize AOS
+    AOS.init({
+        once: true,
+        duration: 1000,
+        offset: 100
+    });
 });
 
-// Theme Management
+// Combine window event listeners
+window.addEventListener('load', () => {
+    const loadingScreen = document.querySelector('.loading-screen');
+    setTimeout(() => {
+        loadingScreen.style.opacity = '0';
+        document.body.style.overflow = 'visible';
+        setTimeout(() => loadingScreen.style.display = 'none', 500);
+    }, 500);
+});
+
+window.addEventListener('resize', () => {
+    if (window.innerWidth > mobileBreakpoint) {
+        navLinks.classList.remove('active');
+    }
+});
+
+// Enhanced Theme Management
 function initTheme() {
-    const savedTheme = localStorage.getItem('theme') || 'light';
+    const savedTheme = localStorage.getItem('theme') || 
+        (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+    
     document.documentElement.setAttribute('data-theme', savedTheme);
+    updateThemeIcon(savedTheme);
+}
+
+function updateThemeIcon(theme) {
+    const moonIcon = document.querySelector('.fa-moon');
+    const sunIcon = document.querySelector('.fa-sun');
+    
+    if (theme === 'dark') {
+        moonIcon.style.opacity = '0';
+        sunIcon.style.opacity = '1';
+    } else {
+        moonIcon.style.opacity = '1';
+        sunIcon.style.opacity = '0';
+    }
 }
 
 const themeToggle = document.getElementById('theme-toggle');
 themeToggle.addEventListener('click', () => {
     const html = document.documentElement;
-    const isDark = html.getAttribute('data-theme') === 'dark';
-    const newTheme = isDark ? 'light' : 'dark';
+    const currentTheme = html.getAttribute('data-theme');
+    const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
     
     html.setAttribute('data-theme', newTheme);
     localStorage.setItem('theme', newTheme);
+    updateThemeIcon(newTheme);
 });
 
 // Initialize theme on load
 initTheme();
 
-// Mobile Menu Toggle
+// Enhanced Mobile Menu
 const hamburg = document.querySelector('.hamburg');
 const navLinks = document.querySelector('.links');
+const mobileBreakpoint = 768;
+
+function handleMobileMenu() {
+    if (window.innerWidth <= mobileBreakpoint) {
+        navLinks.classList.remove('active');
+    }
+}
 
 hamburg.addEventListener('click', (e) => {
     e.stopPropagation();
     navLinks.classList.toggle('active');
 });
 
-// Close menu when clicking outside
 document.addEventListener('click', (e) => {
     if (!navLinks.contains(e.target) && !hamburg.contains(e.target)) {
+        handleMobileMenu();
+    }
+});
+
+window.addEventListener('resize', () => {
+    if (window.innerWidth > mobileBreakpoint) {
         navLinks.classList.remove('active');
     }
 });
@@ -98,18 +149,15 @@ document.querySelector('form').addEventListener('submit', (e) => {
 document.querySelector('footer p').innerHTML = 
     `© ${new Date().getFullYear()} Tenaw Temesgen. All Rights Reserved.`;
 
-// Loading Screen
-window.addEventListener('load', () => {
-    document.querySelector('.loading-screen').style.opacity = '0';
-    setTimeout(() => {
-        document.querySelector('.loading-screen').style.display = 'none';
-    }, 500);
-});
-
 // Scroll to Contact
 function scrollToContact() {
     const contactSection = document.getElementById('contact');
     if (contactSection) {
         contactSection.scrollIntoView({ behavior: 'smooth' });
     }
+}
+
+// Check if we're coming from a form submission
+if (window.location.search.includes('success=true')) {
+    window.location.href = 'success.html';
 }

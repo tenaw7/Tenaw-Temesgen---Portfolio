@@ -4,51 +4,96 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Message Sent Successfully - Tenaw Temesgen</title>
+    <meta name="description" content="Message sent successfully - Thank you for contacting Tenaw Temesgen">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <!-- Theme Toggle -->
+    <button id="theme-toggle" class="theme-btn" aria-label="Toggle theme">
+        <i class="fas fa-moon"></i>
+        <i class="fas fa-sun"></i>
+    </button>
+
     <!-- Navigation -->
     <nav class="glass-nav">
-        <div class="nav-container">
-            <div class="logo" aria-label="Website logo">
-                <img src="assets/logo2.png" alt="Tenaw Temesgen Logo">
-            </div>
-            <ul class="links">
-                <li><a href="index.html">Back to Home</a></li>
-            </ul>
+        <div class="nav-container container">
+            <a href="index.html" class="logo">
+                <img src="assets/logo2.png" alt="Tenaw Temesgen Logo" width="120" height="40" loading="lazy">
+            </a>
+            <a href="index.html" class="cta-button">Back to Portfolio</a>
         </div>
     </nav>
 
-    <!-- Success Content -->
-    <section class="success-message">
-        <div class="success-content">
-            <div class="check-container">
-                <svg class="checkmark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52 52">
-                    <circle class="checkmark__circle" cx="26" cy="26" r="25" fill="none"/>
-                    <path class="checkmark__check" fill="none" d="M14.1 27.2l7.1 7.2 16.7-16.8"/>
-                </svg>
+    <main>
+        <!-- Success Content -->
+        <section class="success-message">
+            <div class="success-content" data-aos="zoom-in">
+                <div class="check-container">
+                    <svg class="checkmark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52 52">
+                        <circle class="checkmark__circle" cx="26" cy="26" r="25" fill="none"/>
+                        <path class="checkmark__check" fill="none" d="M14.1 27.2l7.1 7.2 16.7-16.8"/>
+                    </svg>
+                </div>
+                <h1>Thank You!</h1>
+                <p>Your message has been sent successfully. I'll get back to you within 24 hours.</p>
+                <div class="success-actions">
+                    <a href="index.html" class="cta-button">
+                        <i class="fas fa-arrow-left"></i>
+                        Return to Portfolio
+                    </a>
+                    <a href="index.html#portfolio" class="cta-button">
+                        <i class="fas fa-images"></i>
+                        View Projects
+                    </a>
+                </div>
             </div>
-            <h1>Message Sent Successfully!</h1>
-            <p>Thank you for reaching out. I'll get back to you within 24 hours.</p>
-            <a href="index.html" class="cta-button">
-                <i class="fas fa-arrow-left"></i>
-                Return to Portfolio
-            </a>
-        </div>
-    </section>
+        </section>
+    </main>
 
     <!-- Footer -->
     <footer>
-        <p>© 2025 Tenaw Temesgen. All Rights Reserved.</p>
-        <div class="social-media">
-            <a href="https://twitter.com/tenaw_t_" target="_blank"><i class="fab fa-twitter"></i></a>
-            <a href="https://linkedin.com/in/tenaw7" target="_blank"><i class="fab fa-linkedin"></i></a>
-            <a href="https://github.com/tenaw7" target="_blank"><i class="fab fa-github"></i></a>
+        <div class="container">
+            <div class="footer-contact">
+                <a href="tel:+251911507958">
+                    <i class="fas fa-phone"></i>
+                    <span>+251 911 507 958</span>
+                </a>
+            </div>
+            <p class="copyright">© <span id="current-year"></span> Tenaw Temesgen. All rights reserved.</p>
+            <div class="social-media">
+                <a href="https://twitter.com/tenaw_t_" target="_blank" rel="noopener noreferrer">
+                    <i class="fab fa-twitter" aria-hidden="true"></i>
+                    <span class="sr-only">Twitter Profile</span>
+                </a>
+                <a href="https://linkedin.com/in/tenaw7" target="_blank" rel="noopener noreferrer">
+                    <i class="fab fa-linkedin" aria-hidden="true"></i>
+                    <span class="sr-only">LinkedIn Profile</span>
+                </a>
+                <a href="https://github.com/tenaw7" target="_blank" rel="noopener noreferrer">
+                    <i class="fab fa-github" aria-hidden="true"></i>
+                    <span class="sr-only">GitHub Profile</span>
+                </a>
+            </div>
         </div>
     </footer>
 
-    <!-- Theme Toggle Script -->
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        // Combine all initializations
+        document.addEventListener('DOMContentLoaded', () => {
+            // Initialize AOS
+            AOS.init({
+                once: true,
+                duration: 1000
+            });
+            
+            // Set current year
+            document.getElementById('current-year').textContent = new Date().getFullYear();
+        });
+    </script>
     <script src="script.js"></script>
 </body>
 </html>
