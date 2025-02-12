@@ -8,10 +8,32 @@
     <meta property="og:title" content="Tenaw Temesgen - Portfolio">
     <meta property="og:description" content="Passionate developer and graphic designer creating beautiful digital experiences">
     <meta property="og:image" content="assets/og-image.jpg">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <meta name="keywords" content="web developer, UI/UX designer, frontend developer, backend developer, Ethiopia, portfolio">
+    <meta name="author" content="Tenaw Temesgen">
+    <meta name="robots" content="index, follow">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://yourwebsite.com">
+    <meta property="og:site_name" content="Tenaw Temesgen Portfolio">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:creator" content="@tenaw_t_">
+    <link rel="canonical" href="https://yourwebsite.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" 
+          rel="stylesheet"
+          media="print"
+          onload="this.media='all'">
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png">
+    <link rel="manifest" href="site.webmanifest">
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+    <link rel="preload" href="assets/logo2.png" as="image">
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" as="style">
+    <link rel="preload" href="style.css" as="style">
 </head>
 <body>
     <!-- Loading Screen -->
@@ -34,7 +56,7 @@
     <nav class="glass-nav" aria-label="Main navigation">
         <div class="nav-container container">
             <a href="#home" class="logo">
-                <img src="assets/logo2.png" alt="Tenaw Temesgen Logo" width="120" height="40" loading="lazy">
+                <img src="assets/logo2.png" alt="Tenaw Temesgen Logo" width="120" height="45" loading="lazy">
             </a>
             <ul class="links">
                 <li><a href="#home" aria-current="page">Home</a></li>
@@ -43,6 +65,22 @@
                 <li><a href="#portfolio">Portfolio</a></li>
             </ul>
             <button class="cta-button" onclick="scrollToContact()">Contact Me</button>
+            <div class="language-selector">
+                <button class="lang-btn" aria-label="Change Language">
+                    <i class="fas fa-globe"></i>
+                    <span class="current-lang">EN</span>
+                </button>
+                <div class="lang-dropdown">
+                    <button data-lang="en" class="lang-option active">
+                        <span class="lang-code">EN</span>
+                        <span class="lang-name">English</span>
+                    </button>
+                    <button data-lang="am" class="lang-option">
+                        <span class="lang-code">አማ</span>
+                        <span class="lang-name">አማርኛ</span>
+                    </button>
+                </div>
+            </div>
             <button class="hamburg" aria-label="Toggle menu">
                 <i class="fas fa-bars"></i>
             </button>
@@ -52,117 +90,628 @@
     <!-- Hero Section -->
     <section id="home" class="hero">
         <div class="content">
-            <div class="main-content">
-                <h1 data-aos="fade-right" data-aos-duration="1500">Hi! I'm tenaw</h1>
-                <p class="tagline" data-aos="fade-left" data-aos-duration="1500" data-aos-delay="200">
-                    Turning Ideas Into<br>Digital Reality
-                </p>
-                <div class="buttons">
-                    <button class="cta-button" onclick="scrollToContact()">Hire Me</button>
-                    <button class="cta-button" onclick="window.location.href='#portfolio'">View Work</button>
+            <div class="main-content" data-aos="fade-right">
+                <div class="title-wrapper">
+                    <span class="greeting">Hi there, I'm</span>
+                    <h1 class="glitch">
+                        Tenaw
+                        <span aria-hidden="true">Tenaw</span>
+                        <span aria-hidden="true">Tenaw</span>
+                    </h1>
+                    <div class="title-badges">
+                        <span class="badge">Developer</span>
+                        <span class="badge">Designer</span>
+                    </div>
                 </div>
-                <div class="hero-social">
-                    <a href="https://github.com/tenaw7" target="_blank"><i class="fab fa-github"></i></a>
-                    <a href="https://linkedin.com/in/tenaw7" target="_blank"><i class="fab fa-linkedin"></i></a>
-                    <a href="https://dribbble.com/tenaw7" target="_blank"><i class="fab fa-dribbble"></i></a>
+                
+                <p class="tagline" data-aos="fade-up" data-aos-delay="200">
+                    Transforming Ideas Into
+                    <span class="typed-text"></span>
+                </p>
+                
+                <p class="description" data-aos="fade-up" data-aos-delay="400">
+                    Full-stack developer specializing in building exceptional digital experiences. 
+                    Currently focused on creating accessible, human-centered products.
+                </p>
+
+                <div class="cta-group" data-aos="fade-up" data-aos-delay="600">
+                    <button class="cta-button primary-btn" onclick="scrollToContact()">
+                        <i class="fas fa-paper-plane"></i>
+                        <span>Hire Me</span>
+                    </button>
+                    <a href="#portfolio" class="cta-button secondary-btn">
+                        <i class="fas fa-eye"></i>
+                        <span>View Work</span>
+                    </a>
+                    <a href="assets/resume.pdf" class="cta-button ghost-btn" download>
+                        <i class="fas fa-download"></i>
+                        <span>Download CV</span>
+                    </a>
+                </div>
+
+                <div class="hero-social" data-aos="fade-up" data-aos-delay="800">
+                    <a href="https://github.com/tenaw7" target="_blank" class="social-link">
+                        <i class="fab fa-github"></i>
+                        <span class="tooltip">GitHub</span>
+                    </a>
+                    <a href="https://linkedin.com/in/tenaw7" target="_blank" class="social-link">
+                        <i class="fab fa-linkedin"></i>
+                        <span class="tooltip">LinkedIn</span>
+                    </a>
+                    <a href="https://dribbble.com/tenaw7" target="_blank" class="social-link">
+                        <i class="fab fa-dribbble"></i>
+                        <span class="tooltip">Dribbble</span>
+                    </a>
                 </div>
             </div>
-            <div class="hero-image">
-                <img src="assets/main.png" 
-                     alt="Tenaw Temesgen"
-                     width="500"
-                     height="500"
-                     loading="lazy"
-                     data-aos="zoom-out">
-                <div class="decor-shape"></div>
+
+            <div class="hero-image" data-aos="fade-left">
+                <div class="image-wrapper">
+                    <img src="assets/main.png" 
+                         alt="Tenaw Temesgen"
+                         width="500"
+                         height="500"
+                         loading="lazy">
+                    <div class="floating-shapes">
+                        <div class="shape shape-1"></div>
+                        <div class="shape shape-2"></div>
+                        <div class="shape shape-3"></div>
+                    </div>
+                </div>
+                <div class="experience-tag">
+                    <span class="tag-number">1+</span>
+                    <span class="tag-text">Years of Experience</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="scroll-indicator">
+            <div class="mouse">
+                <div class="wheel"></div>
+            </div>
+            <div class="arrows">
+                <span></span>
+                <span></span>
+                <span></span>
             </div>
         </div>
     </section>
 
     <!-- About Section -->
-    <section id="about">
+    <section id="about" class="section">
         <div class="about-content">
-            <img src="assets/about-me.png" alt="About Me" class="about-image">
-            <div class="about-text">
-                <h3>Turning Vision into Digital Reality & Creative Problem Solver</h3>
-                <p>As an Electrical & Computer Engineering graduate specializing in computer stream, I bridge the gap between technical precision and creative design. With 1+ years of experience crafting full-stack solutions and user-centric interfaces, I transform complex problems into elegant digital experiences that marry functionality with aesthetic appeal.
-                    <h5>Design Philosophy</h5><br>
-                    "Good design is obvious. Great design is transparent."</p>
-                <div class="skills">
-                    <span>Web Development</span>
-                    <span>Graphic Design</span>
-                    <span>Mobile Apps</span>
-                    <span>Branding</span>
+            <div class="about-image-container" data-aos="fade-right">
+                <img src="assets/about-me.png" alt="About Me" class="about-image">
+                <div class="experience-badge">
+                    <span class="years">1+</span>
+                    <span class="text">Years<br>Experience</span>
                 </div>
+            </div>
+            <div class="about-text" data-aos="fade-left">
+                <div class="section-header">
+                    <span class="subtitle">About Me</span>
+                    <h2>Turning Vision into Digital Reality</h2>
+                </div>
+                
+                <p class="about-description">
+                    As an Electrical & Computer Engineering graduate specializing in computer stream, I bridge the gap between technical precision and creative design. With a passion for creating innovative solutions, I transform complex problems into elegant digital experiences.
+                </p>
+                
+                <div class="key-points">
+                    <div class="key-point">
+                        <i class="fas fa-code"></i>
+                        <div>
+                            <h4>Full Stack Development</h4>
+                            <p>Building end-to-end web solutions with modern technologies</p>
+                        </div>
+                    </div>
+                    <div class="key-point">
+                        <i class="fas fa-palette"></i>
+                        <div>
+                            <h4>Creative Design</h4>
+                            <p>Crafting beautiful and intuitive user interfaces</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="expertise-areas">
+                    <div class="expertise-section">
+                        <h4>Technical Skills</h4>
+                        <ul class="skills-list">
+                            <li>Frontend: React, Vue.js, JavaScript</li>
+                            <li>Backend: Node.js, Python, PHP</li>
+                            <li>Database: MongoDB, MySQL</li>
+                            <li>Tools: Git, Docker, AWS</li>
+                        </ul>
+                    </div>
+                    <div class="expertise-section">
+                        <h4>Design Skills</h4>
+                        <ul class="skills-list">
+                            <li>UI/UX Design</li>
+                            <li>Adobe Creative Suite</li>
+                            <li>Figma & Sketch</li>
+                            <li>Brand Identity Design</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="about-cta">
+                    <button class="cta-button primary-btn" onclick="scrollToContact()">
+                        <i class="fas fa-paper-plane"></i>
+                        <span>Hire Me</span>
+                    </button>
+                    <a href="assets/resume.pdf" class="cta-button ghost-btn" download>
+                        <i class="fas fa-download"></i>
+                        <span>Download CV</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education" class="section">
+        <div class="section-header" data-aos="fade-up">
+            <span class="subtitle">My Journey</span>
+            <h2>Education & Training</h2>
+            <p class="section-description">My academic background and professional development path</p>
+        </div>
+        
+        <div class="timeline-container">
+            <div class="education-item" data-aos="fade-up">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <div class="timeline-header">
+                        <span class="date">2020 - 2025</span>
+                        <span class="type">Bachelor Degree</span>
+                    </div>
+                    <h3>Electrical & Computer Engineering</h3>
+                    <h4>jimma institute of Technology University</h4>
+                    <div class="timeline-details">
+                        <ul class="achievement-list">
+                            <li>Graduated with Distinction (3.5/4.0 GPA)</li>
+                            <li>Specialized in Computer Engineering</li>
+                            <li>Final Year Project: IoT-based Smart Home System</li>
+                        </ul>
+                        <div class="key-courses">
+                            <h5>Key Courses</h5>
+                            <div class="course-tags">
+                                <span>Data Structures</span>
+                                <span>Algorithms</span>
+                                <span>Computer Networks</span>
+                                <span>Database Systems</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="education-item" data-aos="fade-up" data-aos-delay="100">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <div class="timeline-header">
+                        <span class="date">2025</span>
+                        <span class="type">Professional Certificate</span>
+                    </div>
+                    <h3>Full Stack Web Development</h3>
+                    <h4>ALX Software Engineering Program</h4>
+                    <div class="timeline-details">
+                        <ul class="achievement-list">
+                            <li>Completed intensive 12-month program</li>
+                            <li>Built 5+ full-stack projects</li>
+                            <li>Collaborated with international team members</li>
+                        </ul>
+                        <div class="certification-badge">
+                            <i class="fas fa-certificate"></i>
+                            <span>Certified Full Stack Developer</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="section">
+        <div class="section-header" data-aos="fade-up">
+            <span class="subtitle">Career Path</span>
+            <h2>Work Experience</h2>
+            <p class="section-description">Professional journey and achievements</p>
+        </div>
+
+        <div class="timeline-container">
+            <div class="experience-item" data-aos="fade-up">
+                <div class="timeline-dot active"></div>
+                <div class="timeline-content">
+                    <div class="timeline-header">
+                        <span class="date">2025 - Present</span>
+                        <span class="company">AIC Technology Center</span>
+                    </div>
+                    <h3>Full Stack Developer</h3>
+                    <div class="timeline-details">
+                        <p class="role-description">
+                            Leading web development projects and mentoring junior developers while implementing modern technologies and best practices.
+                        </p>
+                        <div class="achievements-section">
+                            <h5>Key Achievements</h5>
+                            <ul class="achievement-list">
+                                <li>Developed and launched 5+ client websites</li>
+                                <li>Improved website performance by 40%</li>
+                                <li>Mentored 3 junior developers</li>
+                            </ul>
+                        </div>
+                        <div class="tech-stack">
+                            <h5>Technologies Used</h5>
+                            <div class="tech-tags">
+                                <span>React</span>
+                                <span>Node.js</span>
+                                <span>MongoDB</span>
+                                <span>AWS</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="experience-item" data-aos="fade-up" data-aos-delay="100">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <div class="timeline-header">
+                        <span class="date">2022 - 2023</span>
+                        <span class="company">Tech Solutions Ethiopia</span>
+                    </div>
+                    <h3>Frontend Developer Intern</h3>
+                    <div class="timeline-details">
+                        <p class="role-description">
+                            Collaborated with senior developers on various projects, focusing on frontend development and UI/UX implementation.
+                        </p>
+                        <div class="achievements-section">
+                            <h5>Key Achievements</h5>
+                            <ul class="achievement-list">
+                                <li>Built responsive interfaces for 3 major projects</li>
+                                <li>Reduced page load time by 30%</li>
+                                <li>Implemented modern UI/UX practices</li>
+                            </ul>
+                        </div>
+                        <div class="tech-stack">
+                            <h5>Technologies Used</h5>
+                            <div class="tech-tags">
+                                <span>React</span>
+                                <span>JavaScript</span>
+                                <span>SASS</span>
+                                <span>Git</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section id="stats" class="section">
+        <div class="stats-container">
+            <div class="stat-item" data-aos="fade-up">
+                <i class="fas fa-check-circle"></i>
+                <h3>5+</h3>
+                <p>Projects Completed</p>
+            </div>
+            <div class="stat-item" data-aos="fade-up" data-aos-delay="200">
+                <i class="fas fa-users"></i>
+                <h3>15+</h3>
+                <p>Happy Clients</p>
+            </div>
+            <div class="stat-item" data-aos="fade-up" data-aos-delay="400">
+                <i class="fas fa-clock"></i>
+                <h3>1000+</h3>
+                <p>Hours of Work</p>
+            </div>
+            <div class="stat-item" data-aos="fade-up" data-aos-delay="600">
+                <i class="fas fa-coffee"></i>
+                <h3>200+</h3>
+                <p>Cups of Coffee</p>
             </div>
         </div>
     </section>
 
     <!-- Services Section -->
-    <section id="services">
-        <h2>What I Offer</h2>
-        <ul>
-            <li data-aos="zoom-in">
-                <i class="fas fa-laptop-code"></i>
+    <section id="services" class="section">
+        <div class="section-header" data-aos="fade-up">
+            <span class="subtitle">What I Do</span>
+            <h2>Services I Offer</h2>
+        </div>
+        
+        <div class="services-grid">
+            <div class="service-card" data-aos="fade-up">
+                <div class="service-icon">
+                    <i class="fas fa-code"></i>
+                </div>
                 <h3>Web Development</h3>
-                <p>Modern, responsive websites built with latest technologies</p>
-            </li>
-            <li data-aos="zoom-in" data-aos-delay="200">
-                <i class="fas fa-paint-brush"></i>
-                <h3>Graphic Design</h3>
-                <p>User-centered interfaces that drive engagement</p>
-            </li>
-            <li data-aos="zoom-in" data-aos-delay="400">
-                <i class="fas fa-mobile-alt"></i>
+                <p>Building responsive and dynamic websites using modern technologies and best practices.</p>
+                <ul class="service-features">
+                    <li><i class="fas fa-check"></i> Custom Website Development</li>
+                    <li><i class="fas fa-check"></i> Frontend & Backend Solutions</li>
+                    <li><i class="fas fa-check"></i> API Integration</li>
+                </ul>
+            </div>
+
+            <div class="service-card" data-aos="fade-up" data-aos-delay="100">
+                <div class="service-icon">
+                    <i class="fas fa-mobile-alt"></i>
+                </div>
                 <h3>Mobile Development</h3>
-                <p>Cross-platform mobile applications</p>
-            </li>
-        </ul>
+                <p>Creating native and cross-platform mobile applications for iOS and Android.</p>
+                <ul class="service-features">
+                    <li><i class="fas fa-check"></i> Native App Development</li>
+                    <li><i class="fas fa-check"></i> Cross-Platform Solutions</li>
+                    <li><i class="fas fa-check"></i> App Maintenance</li>
+                </ul>
+            </div>
+
+            <div class="service-card" data-aos="fade-up" data-aos-delay="200">
+                <div class="service-icon">
+                    <i class="fas fa-paint-brush"></i>
+                </div>
+                <h3>UI/UX Design</h3>
+                <p>Designing intuitive and engaging user interfaces with focus on user experience.</p>
+                <ul class="service-features">
+                    <li><i class="fas fa-check"></i> User Interface Design</li>
+                    <li><i class="fas fa-check"></i> User Experience Design</li>
+                    <li><i class="fas fa-check"></i> Prototyping</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Project Section -->
+    <section id="featured-project" class="section">
+        <div class="container">
+            <h2>Featured Project</h2>
+            <div class="featured-content" data-aos="fade-up">
+                <div class="featured-image">
+                    <img src="assets/featured-project.jpg" alt="Featured Project" loading="lazy">
+                </div>
+                <div class="featured-details">
+                    <span class="project-category">Web Application</span>
+                    <h3>E-Learning Platform</h3>
+                    <p>A comprehensive learning management system built with React and Node.js. Features include live video classes, course management, and student progress tracking.</p>
+                    <div class="tech-stack">
+                        <span>React</span>
+                        <span>Node.js</span>
+                        <span>MongoDB</span>
+                        <span>WebRTC</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="#" class="cta-button">View Live</a>
+                        <a href="#" class="ghost-button">Source Code</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Add after the featured project section -->
+    <section id="tech-stack" class="section">
+        <h2>Technologies I Work With</h2>
+        <div class="tech-grid">
+            <div class="tech-item" data-aos="fade-up">
+                <i class="fab fa-react"></i>
+                <h4>React.js</h4>
+            </div>
+            <div class="tech-item" data-aos="fade-up" data-aos-delay="100">
+                <i class="fab fa-node-js"></i>
+                <h4>Node.js</h4>
+            </div>
+            <div class="tech-item" data-aos="fade-up" data-aos-delay="200">
+                <i class="fab fa-python"></i>
+                <h4>Python</h4>
+            </div>
+            <div class="tech-item" data-aos="fade-up" data-aos-delay="300">
+                <i class="fab fa-aws"></i>
+                <h4>AWS</h4>
+            </div>
+            <div class="tech-item" data-aos="fade-up" data-aos-delay="400">
+                <i class="fab fa-docker"></i>
+                <h4>Docker</h4>
+            </div>
+            <div class="tech-item" data-aos="fade-up" data-aos-delay="500">
+                <i class="fab fa-git-alt"></i>
+                <h4>Git</h4>
+            </div>
+        </div>
     </section>
 
     <!-- Portfolio Section -->
-    <section id="portfolio">
-        <div class="portfolio-header">
-            <h2>My Work</h2>
-            <div class="portfolio-filters">
-                <button class="filter-btn active" data-filter="all">All</button>
-                <button class="filter-btn" data-filter="web">Web</button>
-                <button class="filter-btn" data-filter="mobile">Mobile</button>
-                <button class="filter-btn" data-filter="design">Design</button>
+    <section id="portfolio" class="section">
+        <div class="section-header" data-aos="fade-up">
+            <span class="subtitle">My Work</span>
+            <h2>Featured Projects</h2>
+        </div>
+
+        <div class="portfolio-filters" data-aos="fade-up">
+            <button class="filter-btn active" data-filter="all">All Projects</button>
+            <button class="filter-btn" data-filter="web">Web Development</button>
+            <button class="filter-btn" data-filter="mobile">Mobile Apps</button>
+            <button class="filter-btn" data-filter="design">UI/UX Design</button>
+        </div>
+
+        <div class="projects-grid">
+            <!-- Project 1 -->
+            <div class="project-card" data-category="web" data-aos="fade-up">
+                <div class="project-image">
+                    <img src="assets/project1.png" alt="E-Commerce Platform" loading="lazy">
+                    <div class="project-overlay">
+                        <div class="project-links">
+                            <a href="#" class="project-link live-link" target="_blank" rel="noopener">
+                                <i class="fas fa-external-link-alt"></i>
+                                <span class="tooltip">Live Demo</span>
+                            </a>
+                            <a href="#" class="project-link github-link" target="_blank" rel="noopener">
+                                <i class="fab fa-github"></i>
+                                <span class="tooltip">Source Code</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-info">
+                    <div class="project-header">
+                        <span class="project-category">Web Development</span>
+                        <span class="project-year">2024</span>
+                    </div>
+                    <h3>E-Commerce Platform</h3>
+                    <p>A full-stack e-commerce solution with modern features including real-time inventory, secure payments, and admin dashboard.</p>
+                    <div class="project-tech">
+                        <span>React.js</span>
+                        <span>Node.js</span>
+                        <span>MongoDB</span>
+                        <span>Stripe</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 2 -->
+            <div class="project-card" data-category="mobile" data-aos="fade-up" data-aos-delay="100">
+                <div class="project-image">
+                    <img src="assets/project2.png" alt="Fitness Tracking App" loading="lazy">
+                    <div class="project-overlay">
+                        <div class="project-links">
+                            <a href="#" class="project-link live-link" target="_blank" rel="noopener">
+                                <i class="fas fa-external-link-alt"></i>
+                                <span class="tooltip">Live Demo</span>
+                            </a>
+                            <a href="#" class="project-link github-link" target="_blank" rel="noopener">
+                                <i class="fab fa-github"></i>
+                                <span class="tooltip">Source Code</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-info">
+                    <div class="project-header">
+                        <span class="project-category">Mobile Development</span>
+                        <span class="project-year">2024</span>
+                    </div>
+                    <h3>Fitness Tracking App</h3>
+                    <p>A cross-platform mobile application for tracking workouts, nutrition, and fitness progress with social features.</p>
+                    <div class="project-tech">
+                        <span>React Native</span>
+                        <span>Firebase</span>
+                        <span>Redux</span>
+                        <span>Node.js</span>
+                    </div>
+                </div>
             </div>
         </div>
-        <div class="projects">
-            <div class="project" data-aos="fade-up" data-category="web">
-                <img src="assets/project1.png" 
-                     alt="E-Commerce Platform"
-                     width="400"
-                     height="300"
-                     loading="lazy">
-                <div class="project-info">
-                    <h3>E-Commerce Platform</h3>
-                    <p>Full-stack shopping solution with React & Node.js</p>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="section">
+        <div class="section-header" data-aos="fade-up">
+            <span class="subtitle">Testimonials</span>
+            <h2>What Clients Say</h2>
+            <p class="section-description">Feedback from people I've worked with</p>
+        </div>
+
+        <div class="testimonials-container">
+            <div class="testimonial" data-aos="fade-up">
+                <div class="testimonial-content">
+                    <div class="quote-icon">
+                        <i class="fas fa-quote-left"></i>
+                    </div>
+                    <p>"Tenaw delivered an exceptional website that perfectly captured our vision. His attention to detail and technical expertise are outstanding. The project was delivered on time and exceeded our expectations."</p>
+                    <div class="testimonial-author">
+                        <img src="assets/client1.jpg" alt="John Smith" loading="lazy">
+                        <div class="author-info">
+                            <h4>Dr_ Abiy Ahmed</h4>
+                            <p>CEO, ENSA</p>
+                            <div class="rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <div class="project" data-aos="fade-up" data-category="mobile">
-                <img src="assets/project2.png" 
-                     alt="Fitness App"
-                     width="400"
-                     height="300"
-                     loading="lazy">
-                <div class="project-info">
-                    <h3>Fitness App</h3>
-                    <p>Mobile fitness tracking application</p>
+
+            <div class="testimonial" data-aos="fade-up" data-aos-delay="200">
+                <div class="testimonial-content">
+                    <div class="quote-icon">
+                        <i class="fas fa-quote-left"></i>
+                    </div>
+                    <p>"Working with Tenaw was a pleasure. He transformed our ideas into a beautiful, functional website that exceeded our expectations. His communication and problem-solving skills are exceptional."</p>
+                    <div class="testimonial-author">
+                        <img src="assets/client2.jpg" alt="Adem Seid" loading="lazy">
+                        <div class="author-info">
+                            <h4>Adem Seid</h4>
+                            <p>CEO, AIC</p>
+                            <div class="rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <div class="project" data-aos="fade-up" data-category="design">
-                <img src="assets/project3.png" 
-                     alt="Graphic Design"
-                     width="400"
-                     height="300"
-                     loading="lazy">
-                <div class="project-info">
-                    <h3>Graphic</h3>
-                    <p>This is my firest Graphic design</p>
+        </div>
+    </section>
+
+    <!-- Blog Section -->
+    <section id="blog" class="section">
+        <div class="section-header" data-aos="fade-up">
+            <span class="subtitle">Latest Updates</span>
+            <h2>Latest Articles</h2>
+        </div>
+        
+        <div class="blog-container">
+            <article class="blog-post" data-aos="fade-up">
+                <div class="blog-image">
+                    <img src="assets/blog1.jpg" alt="Web Development Trends" loading="lazy">
+                    <div class="blog-category">Development</div>
+                </div>
+                <div class="blog-content">
+                    <div class="blog-meta">
+                        <span class="blog-date"><i class="far fa-calendar"></i> March 15, 2024</span>
+                        <span class="blog-author"><i class="far fa-user"></i> Tenaw Temesgen</span>
+                    </div>
+                    <h3>Modern Web Development Trends</h3>
+                    <p class="blog-excerpt">Exploring the latest trends and technologies shaping the future of web development in 2024. From AI integration to serverless architecture...</p>
+                    <button class="read-more" onclick="openBlogPost('blog1')">
+                        Read More <i class="fas fa-arrow-right"></i>
+                    </button>
+                </div>
+            </article>
+
+            <article class="blog-post" data-aos="fade-up" data-aos-delay="200">
+                <div class="blog-image">
+                    <img src="assets/blog2.jpg" alt="UI/UX Design Principles" loading="lazy">
+                    <div class="blog-category">Design</div>
+                </div>
+                <div class="blog-content">
+                    <div class="blog-meta">
+                        <span class="blog-date"><i class="far fa-calendar"></i> March 10, 2024</span>
+                        <span class="blog-author"><i class="far fa-user"></i> Tenaw Temesgen</span>
+                    </div>
+                    <h3>Essential UI/UX Design Principles</h3>
+                    <p class="blog-excerpt">A comprehensive guide to creating user-friendly and engaging interfaces. Learn the key principles that drive successful digital experiences...</p>
+                    <button class="read-more" onclick="openBlogPost('blog2')">
+                        Read More <i class="fas fa-arrow-right"></i>
+                    </button>
+                </div>
+            </article>
+        </div>
+
+        <!-- Blog Modal -->
+        <div id="blogModal" class="modal">
+            <div class="modal-content">
+                <span class="close-modal">&times;</span>
+                <div class="modal-body">
+                    <!-- Content will be dynamically inserted here -->
                 </div>
             </div>
         </div>
@@ -170,77 +719,170 @@
 
     <!-- Contact Section -->
     <section id="contact" class="section">
-        <div class="container">
-            <h2 data-aos="fade-up">Let's Work Together</h2>
-            <div class="contact-info" data-aos="fade-up">
-                <p>
+        <div class="section-header" data-aos="fade-up">
+            <span class="subtitle">Get In Touch</span>
+            <h2>Let's Work Together</h2>
+            <p class="section-description">Have a project in mind? Let's create something amazing together.</p>
+        </div>
+
+        <div class="contact-container">
+            <div class="contact-info" data-aos="fade-right">
+                <div class="contact-card">
                     <i class="fas fa-phone"></i>
+                    <h3>Phone</h3>
                     <a href="tel:+251911507958">+251 911 507 958</a>
-                </p>
+                </div>
+                <div class="contact-card">
+                    <i class="fas fa-envelope"></i>
+                    <h3>Email</h3>
+                    <a href="mailto:7ethiopia1993@gmail.com">7ethiopia1993@gmail.com</a>
+                </div>
+                <div class="contact-card">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <h3>Location</h3>
+                    <p>Addis Ababa, Ethiopia</p>
+                </div>
+                <div class="social-links">
+                    <a href="https://github.com/tenaw7" target="_blank" rel="noopener">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="https://linkedin.com/in/tenaw7" target="_blank" rel="noopener">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                    <a href="https://twitter.com/tenaw_t_" target="_blank" rel="noopener">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                </div>
             </div>
+
             <form class="contact-form" 
                   action="https://formspree.io/f/mzzdggkd" 
                   method="POST" 
-                  data-aos="fade-up"
-                  onsubmit="setTimeout(function(){window.location='success.html'}, 1000)">
+                  data-aos="fade-left"
+                  onsubmit="return handleSubmit(event)">
                 <div class="form-group">
                     <label for="name">Full Name</label>
-                    <input type="text" 
-                           id="name" 
-                           name="name" 
-                           required 
-                           placeholder="Enter your name">
+                    <div class="input-wrapper">
+                        <i class="fas fa-user"></i>
+                        <input type="text" 
+                               id="name" 
+                               name="name" 
+                               required 
+                               placeholder="Enter your name">
+                    </div>
                 </div>
                 <div class="form-group">
                     <label for="email">Email Address</label>
-                    <input type="email" 
-                           id="email" 
-                           name="_replyto" 
-                           required 
-                           placeholder="your@email.com">
+                    <div class="input-wrapper">
+                        <i class="fas fa-envelope"></i>
+                        <input type="email" 
+                               id="email" 
+                               name="_replyto" 
+                               required 
+                               placeholder="your@email.com">
+                    </div>
                 </div>
                 <div class="form-group">
-                    <label for="message">Project Details</label>
-                    <textarea id="message" 
-                              name="message" 
-                              required 
-                              placeholder="Describe your project"></textarea>
+                    <label for="subject">Subject</label>
+                    <div class="input-wrapper">
+                        <i class="fas fa-pencil-alt"></i>
+                        <input type="text" 
+                               id="subject" 
+                               name="subject" 
+                               required 
+                               placeholder="Project subject">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <div class="input-wrapper">
+                        <i class="fas fa-comment-alt"></i>
+                        <textarea id="message" 
+                                 name="message" 
+                                 required 
+                                 placeholder="Describe your project"></textarea>
+                    </div>
                 </div>
                 <input type="hidden" name="_subject" value="New Portfolio Contact Request">
-                <button type="submit" class="cta-button">Send Message</button>
+                <button type="submit" class="submit-btn">
+                    <span>Send Message</span>
+                    <i class="fas fa-paper-plane"></i>
+                </button>
             </form>
         </div>
     </section>
     </main>
 
     <!-- Footer -->
-    <footer class="section">
-        <div class="container">
-            <div class="footer-contact">
-                <a href="tel:+251911507958">
-                    <i class="fas fa-phone"></i>
-                    <span>+251 911 507 958</span>
-                </a>
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-main">
+                <div class="footer-brand">
+                    <img src="assets/logo2.png" alt="Tenaw Temesgen Logo" width="120" height="45" loading="lazy">
+                    <p class="footer-description">
+                        Creating exceptional digital experiences through innovative web development and design solutions.
+                    </p>
+                </div>
+                
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#portfolio">Portfolio</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-contact">
+                    <h4>Contact Info</h4>
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <a href="tel:+251911507958">+251 911 507 958</a>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <a href="mailto:7ethiopia1993@gmail.com">7ethiopia1993@gmail.com</a>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>Addis Ababa, Ethiopia</span>
+                    </div>
+                </div>
+                
+                <div class="footer-social">
+                    <h4>Follow Me</h4>
+                    <div class="social-links">
+                        <a href="https://github.com/tenaw7" target="_blank" rel="noopener" aria-label="GitHub">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="https://linkedin.com/in/tenaw7" target="_blank" rel="noopener" aria-label="LinkedIn">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                        <a href="https://twitter.com/tenaw_t_" target="_blank" rel="noopener" aria-label="Twitter">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                    </div>
+                </div>
             </div>
-            <p class="copyright">&copy; <span id="current-year"></span> Tenaw Temesgen. All rights reserved.</p>
-            <div class="social-media">
-                <a href="https://twitter.com/tenaw_t_" target="_blank" rel="noopener noreferrer">
-                    <i class="fab fa-twitter" aria-hidden="true"></i>
-                    <span class="sr-only">Twitter Profile</span>
-                </a>
-                <a href="https://linkedin.com/in/tenaw7" target="_blank" rel="noopener noreferrer">
-                    <i class="fab fa-linkedin" aria-hidden="true"></i>
-                    <span class="sr-only">LinkedIn Profile</span>
-                </a>
-                <a href="https://github.com/tenaw7" target="_blank" rel="noopener noreferrer">
-                    <i class="fab fa-github" aria-hidden="true"></i>
-                    <span class="sr-only">GitHub Profile</span>
-                </a>
+            
+            <div class="footer-bottom">
+                <p class="copyright">&copy; <span id="current-year"></span> Tenaw Temesgen. All rights reserved.</p>
+                <div class="footer-extra">
+                    <a href="#" class="privacy-link">Privacy Policy</a>
+                    <span class="separator">|</span>
+                    <a href="#" class="terms-link">Terms of Service</a>
+                </div>
             </div>
         </div>
     </footer>
     
-    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-    <script src="script.js"></script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12" defer></script>
+    <script src="script.js" defer></script>
+
+    <!-- Add right after the body tag opens -->
+    <div class="scroll-progress"></div>
 </body>
 </html>
